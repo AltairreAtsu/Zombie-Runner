@@ -539,6 +539,7 @@ GameObject:
   - component: {fileID: 114602171621049090}
   - component: {fileID: 114947389323946750}
   - component: {fileID: 195633443835212938}
+  - component: {fileID: 114115128813521832}
   m_Layer: 0
   m_Name: ZombieRig
   m_TagString: Untagged
@@ -2548,6 +2549,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114115128813521832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403677882895042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86eb0f5ba46ddde44846cbbcd3f5f4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDistance: 2.5
+  health: 2
 --- !u!114 &114602171621049090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2564,7 +2578,7 @@ MonoBehaviour:
   m_JumpPower: 6
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 1
+  m_MoveSpeedMultiplier: 0.8
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 2
 --- !u!114 &114947389323946750

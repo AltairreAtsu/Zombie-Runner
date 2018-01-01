@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpawnPointGizmo : MonoBehaviour {
 
 	void  OnDrawGizmos(){
-		Gizmos.DrawWireCube (transform.position, new Vector3(3, 3, 3));
+		Vector3 position = transform.position;
+		position.y += 1;
+		Gizmos.DrawWireCube (position, new Vector3(3, 3, 3));
 	}
 }

@@ -123,6 +123,7 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\RadioSystem.cs" />
      <Compile Include="Assets\Scripts\SpawnPointGizmo.cs" />
+     <Compile Include="Assets\Scripts\ZombieLogic.cs" />
      <Compile Include="Assets\Scripts\ZombieSpawner.cs" />
      <None Include="Assets\_Imports\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\_Imports\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
