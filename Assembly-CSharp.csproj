@@ -117,6 +117,7 @@
      <Compile Include="Assets\_Imports\Standard Assets\Utility\WaypointProgressTracker.cs" />
      <Compile Include="Assets\Scripts\DayNightCycle.cs" />
      <Compile Include="Assets\Scripts\Eyes.cs" />
+     <Compile Include="Assets\Scripts\FireGun.cs" />
      <Compile Include="Assets\Scripts\Helicopter.cs" />
      <Compile Include="Assets\Scripts\HeloCollider.cs" />
      <Compile Include="Assets\Scripts\InnerVoice.cs" />

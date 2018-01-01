@@ -6,6 +6,11 @@ public class Player : MonoBehaviour {
 	private GameObject[] spawnPoints;
 	private bool respawn = false;
 
+	[SerializeField][Tooltip ("The Gun Gameobject with animator component.")]
+	private Animator gunObjectAnimator;
+	[SerializeField][Tooltip ("The Game GameObject representing the end of the barrel.")]
+	private Transform endOfBarrel;
+
 	public GameObject LandingZone;
 
 	// Use this for initialization
@@ -17,6 +22,12 @@ public class Player : MonoBehaviour {
 		if(respawn){
 			Respawn ();
 			respawn = false;
+		}
+
+		if(Input.GetAxis("Fire1") > 0.5f){
+			gunObjectAnimator.SetBool ("Firing", true);
+		} else {
+			gunObjectAnimator.SetBool ("Firing", false);
 		}
 	}
 
