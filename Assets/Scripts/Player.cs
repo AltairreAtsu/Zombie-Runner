@@ -8,8 +8,13 @@ public class Player : MonoBehaviour {
 
 	[SerializeField][Tooltip ("The Gun Gameobject with animator component.")]
 	private Animator gunObjectAnimator;
-	[SerializeField][Tooltip ("The Game GameObject representing the end of the barrel.")]
-	private Transform endOfBarrel;
+
+	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
+	private int health = 3;
+
+	[SerializeField][Tooltip ("The time that must pass after a hit before another can registered.")]
+	private float invicabilityTime = 0.3f;
+	private float timeSinceHit = 0f;
 
 	public GameObject LandingZone;
 
@@ -19,6 +24,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update(){
+		timeSinceHit += Time.deltaTime;
+
 		if(respawn){
 			Respawn ();
 			respawn = false;
@@ -31,6 +38,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+
 	private void OnFindClearArea(){
 		// Drop A flare
 		Invoke("DropFlare", 3f);
@@ -38,8 +46,24 @@ public class Player : MonoBehaviour {
 	}
 
 	private void DropFlare(){
-		Debug.Log ("Dropped A flare!");
 		Instantiate (LandingZone, transform.position, transform.rotation);
+	}
+
+	public void Hit(int damage){
+		if (timeSinceHit >= invicabilityTime) {
+			health -= damage;
+			timeSinceHit = 0f;
+
+			if (health <= 0) {
+				Die ();
+			}
+		}
+	}
+
+	private void Die(){
+		respawn = true;
+		// Play Death Sound Clip
+		Debug.Log ("Respawning the player!");
 	}
 
 	private void Respawn(){
@@ -48,6 +72,7 @@ public class Player : MonoBehaviour {
 
 		transform.position = spawnPoint.transform.position;
 		transform.rotation = Quaternion.identity;
+
 	}
 
 }
