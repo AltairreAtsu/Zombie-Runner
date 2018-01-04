@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	private bool respawn = false;
 
 	[SerializeField][Tooltip ("The Gun Gameobject with animator component.")]
-	private Animator gunObjectAnimator;
+	private Animator gunObjectAnimator = null;
 
 	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
 	private int health = 3;

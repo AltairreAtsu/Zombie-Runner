@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Eyes : MonoBehaviour {
 
-	[Tooltip ("The Amount of FOV to remove from the camera to create a zoom effect.")]
-	public float zoomLevel = 10;
-
+	[SerializeField][Tooltip ("The Amount of FOV to remove from the camera to create a zoom effect.")]
+	private float zoomLevel = 10;
 	private Camera eyeCamera;
-	[SerializeField]
-	private Animator animator;
 	private float baseFOV;
+
+	[SerializeField]
+	private Animator gunAnimator;
 
 	// Use this for initialization
 	void Start () {
@@ -23,15 +23,15 @@ public class Eyes : MonoBehaviour {
 		if(Input.GetAxis("Zoom") > 0.5f){
 			eyeCamera.fieldOfView = baseFOV - zoomLevel;
 
-			if ( !animator.GetBool("Zoomed") ){
-				animator.SetBool ("Zoomed", true);
+			if ( !gunAnimator.GetBool("Zoomed") ){
+				gunAnimator.SetBool ("Zoomed", true);
 			}
 				
 		} else {
 			eyeCamera.fieldOfView = baseFOV;
 
-			if ( animator.GetBool("Zoomed") ){
-				animator.SetBool ("Zoomed", false);
+			if ( gunAnimator.GetBool("Zoomed") ){
+				gunAnimator.SetBool ("Zoomed", false);
 			}
 		}
 	}
