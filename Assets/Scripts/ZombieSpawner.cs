@@ -27,7 +27,8 @@ public class ZombieSpawner : MonoBehaviour {
 		if(zombieParent == null){
 			zombieParent = new GameObject ("Zombies");
 		}
-			
+
+		ZombieLogic.OnZombieKilledObservers += OnZombieKilled;
 	}
 
 	// Update is called once per frame
@@ -58,5 +59,9 @@ public class ZombieSpawner : MonoBehaviour {
 		zombie.transform.SetParent (zombieParent.transform, true);
 		zombieCount++;
 		timeSinceLastSpawn = 0f;
+	}
+
+	private void OnZombieKilled(Transform zombiePosition){
+		zombieCount--;
 	}
 }
