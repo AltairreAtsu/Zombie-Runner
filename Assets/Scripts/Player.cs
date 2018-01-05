@@ -10,7 +10,8 @@ public class Player : MonoBehaviour {
 	private Animator gunObjectAnimator = null;
 
 	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
-	private int health = 3;
+	private int healthMax = 3;
+	private int healthCurrent;
 
 	[SerializeField][Tooltip ("The time that must pass after a hit before another can registered.")]
 	private float invicabilityTime = 0.3f;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnPoints = GameObject.FindGameObjectsWithTag ("Spawn Point");
+		healthCurrent = healthMax;
 	}
 
 	void Update(){
@@ -54,11 +56,11 @@ public class Player : MonoBehaviour {
 
 	public void Hit(int damage){
 		if (timeSinceHit >= invicabilityTime) {
-			health -= damage;
+			healthCurrent -= damage;
 			timeSinceHit = 0f;
 			playerHitObservers ();
 
-			if (health <= 0) {
+			if (healthCurrent <= 0) {
 				Die ();
 			}
 		}
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour {
 		transform.position = spawnPoint.transform.position;
 		transform.rotation = Quaternion.identity;
 
+		healthCurrent = healthMax;
 	}
 
 }

@@ -10,7 +10,7 @@ public class Eyes : MonoBehaviour {
 	private float baseFOV;
 
 	[SerializeField]
-	private Animator gunAnimator;
+	private Animator gunAnimator = null;
 
 	// Use this for initialization
 	void Start () {
