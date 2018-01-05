@@ -16,15 +16,12 @@ public class AlphaLerp : MonoBehaviour {
 	private float passedTime = 0f;
 	private Image image;
 
-	private Player player;
-
 	// Use this for initialization
 	void Start () {
 		image = GetComponent<Image> ();
-		player = GameObject.FindObjectOfType<Player> ();
+
 		baseAlpha = image.color.a;
 
-		player.playerHitObservers += Trigger;
 		image.enabled = false;
 	}
 	
@@ -42,7 +39,7 @@ public class AlphaLerp : MonoBehaviour {
 
 	}
 
-	void Trigger()
+	public void Trigger()
 	{
 		image.enabled = true;
 		image.color = new Color (image.color.r, image.color.g, image.color.b, maxAlpha);

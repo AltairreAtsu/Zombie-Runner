@@ -71,3 +71,5 @@ C:\Users\Marc Taurasi\Documents\Unity\Projects\Zombie Runner\Temp\bin\Debug\Unit
 C:\Users\Marc Taurasi\Documents\Unity\Projects\Zombie Runner\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
 C:\Users\Marc Taurasi\Documents\Unity\Projects\Zombie Runner\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\Marc Taurasi\Documents\Unity\Projects\Zombie Runner\obj\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\Marc Taurasi\Documents\Unity\Projects\Zombie Runner\Temp\bin\Debug\TextMeshPro-2017.3-1.0.56-Editor.dll
+C:\Users\Marc Taurasi\Documents\Unity\Projects\Zombie Runner\Temp\bin\Debug\TextMeshPro-2017.3-1.0.56-Runtime.dll
