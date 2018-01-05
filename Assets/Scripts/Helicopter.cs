@@ -21,4 +21,12 @@ public class Helicopter : MonoBehaviour {
 		called = true;
 		heliRigidbody.velocity = new Vector3 (0f, 0f, 50f);
 	}
+
+	private void Update(){
+		if(transform.position.z > -100){
+			// Helicopter close to playspace
+			// Anounce Helicopter Arrival
+			// Move towards LZ
+		}
+	}
 }
