@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZombieSpawner : MonoBehaviour {
 
 	[SerializeField][Tooltip ("Prefab to use when spawning zombies.")]
-	private GameObject zombiePrefab;
+	private GameObject zombiePrefab = null;
 	private GameObject zombieParent;
 
 	[SerializeField][Tooltip ("Hard cap of zombies that can be spawned at once.")]

@@ -12,15 +12,12 @@ public class AlphaLerp : MonoBehaviour {
 	[SerializeField]
 	private float fadeTime = 1f;
 
-	private float baseAlpha = 0f;
 	private float passedTime = 0f;
 	private Image image;
 
 	// Use this for initialization
 	void Start () {
 		image = GetComponent<Image> ();
-
-		baseAlpha = image.color.a;
 
 		image.enabled = false;
 	}
