@@ -16,6 +16,9 @@ public class Player : MonoBehaviour {
 	private float invicabilityTime = 0.3f;
 	private float timeSinceHit = 0f;
 
+	public delegate void OnPlayerHit();
+	public OnPlayerHit playerHitObservers;
+
 	public GameObject LandingZone;
 
 	// Use this for initialization
@@ -53,6 +56,7 @@ public class Player : MonoBehaviour {
 		if (timeSinceHit >= invicabilityTime) {
 			health -= damage;
 			timeSinceHit = 0f;
+			playerHitObservers ();
 
 			if (health <= 0) {
 				Die ();

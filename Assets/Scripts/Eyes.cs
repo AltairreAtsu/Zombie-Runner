@@ -20,7 +20,7 @@ public class Eyes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetAxis("Zoom") > 0.5f){
+		if(Input.GetAxis("Fire2") > 0.5f){
 			eyeCamera.fieldOfView = baseFOV - zoomLevel;
 
 			if ( !gunAnimator.GetBool("Zoomed") ){
