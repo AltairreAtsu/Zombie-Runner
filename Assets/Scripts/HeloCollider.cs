@@ -17,6 +17,7 @@ public class HeloCollider : MonoBehaviour {
 		if(Time.time - startTime > 1 && !obstructed && !foundClearArea && Time.realtimeSinceStartup > 10f){
 			SendMessageUpwards("OnFindClearArea");
 			foundClearArea = true;
+			gameObject.SetActive (false);
 		}
 	}
 
