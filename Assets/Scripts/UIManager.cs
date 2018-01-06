@@ -32,9 +32,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	void OnZombieKilled(Transform zombiePosition){
-		// TODO instantiate Pop Up
 		Vector3 position = Camera.main.WorldToScreenPoint(zombiePosition.position);
-		Debug.Log (position.x + ", " + position.y);
 
 		GameObject popUp = Object.Instantiate(killPopUpPrefab) as GameObject;
 		popUp.transform.SetParent (gameObject.transform, true);

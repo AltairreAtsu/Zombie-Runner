@@ -362,7 +362,7 @@ Transform:
   - {fileID: 1501981287}
   - {fileID: 274602441}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &57563285
 MonoBehaviour:
@@ -1232,7 +1232,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4045654546811444, guid: 058984dcb8a5e9c46b52c5943ed7289d, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 058984dcb8a5e9c46b52c5943ed7289d, type: 2}
@@ -1634,41 +1634,7 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224053935774909418, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 269.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 224053935774909418, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -416.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 224053935774909418, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 122.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 224053935774909418, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 72.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 114450466822344348, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: m_fontSize
-      value: 68.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 114450466822344348, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: m_fontSizeBase
-      value: 68.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 114450466822344348, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 82895793001723052, guid: e18a183fb3a0f594ebcb00bad4939875, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e18a183fb3a0f594ebcb00bad4939875, type: 2}
   m_IsPrefabParent: 0

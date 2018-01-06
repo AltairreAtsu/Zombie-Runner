@@ -17,11 +17,16 @@ public class ZombieLogic : MonoBehaviour {
 	private float invicabilityTime = 0.3f;
 	private float timeSinceHit = 0f;
 
+	[SerializeField]
+	private AudioClip deathClip = null;
+	private AudioSource audioSource = null;
+
 	public delegate void OnZombieKilled(Transform zombiePostion);
 	public static OnZombieKilled OnZombieKilledObservers;
 
 	void Start () {
 		Player = GameObject.FindObjectOfType<Player> ();
+		audioSource = GetComponent<AudioSource> ();
 
 		gameObject.GetComponent<AICharacterControl> ().target = Player.transform;
 	}
