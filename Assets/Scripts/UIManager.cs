@@ -5,16 +5,15 @@ using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour {
-	private Player player;
-	private AlphaLerp bloodOverlay;
-
-	[SerializeField]
+	[SerializeField][Tooltip ("Store the refrence to the Kill Counter UI Element in here.")]
 	private TextMeshProUGUI killCounter = null;
-	[SerializeField]
+	[SerializeField][Tooltip ("Store the Refrence to the Timer UI Element in here.")]
 	private TextMeshProUGUI timer = null;
-	[SerializeField]
+	[SerializeField][Tooltip ("The Kill UI Pop Up prefab to instantiate when a zombie is killed.")]
 	private GameObject killPopUpPrefab = null;
 
+	private Player player;
+	private AlphaLerp bloodOverlay;
 	private float timeSurvived = 0f;
 	private float helicopterTime = 0f;
 

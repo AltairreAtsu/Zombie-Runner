@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InnerVoice : MonoBehaviour {
-
-	public AudioClip whatHappened;
-	public AudioClip goodLandingArea;
+	[SerializeField][Tooltip ("Introduction Clip to be played at game start.")]
+	private AudioClip whatHappened;
+	[SerializeField][Tooltip ("Clip to be played when the player finds a good landing area for the helicopter.")]
+	private AudioClip goodLandingArea;
 
 	private AudioSource audioSource;
 

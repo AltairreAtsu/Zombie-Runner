@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 81551010635762448}
   - component: {fileID: 124376358949412346}
   - component: {fileID: 114670545518597634}
+  - component: {fileID: 114668387666289200}
   m_Layer: 0
   m_Name: FirstPersonCamera
   m_TagString: MainCamera
@@ -203,13 +204,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954436425511590}
-  m_LocalRotation: {x: 0.110140644, y: -0.69851804, z: 0.095966, w: 0.7005228}
-  m_LocalPosition: {x: 0.0008, y: 0.1365, z: 0.6972}
+  m_LocalRotation: {x: 0, y: 0, z: -0.010140165, w: 0.9999486}
+  m_LocalPosition: {x: 0.001, y: 0.137, z: 0.711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4005830016046494}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 16.761, y: -90.007, z: -1.162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.162}
 --- !u!4 &4435434810531272
 Transform:
   m_ObjectHideFlags: 1
@@ -317,12 +318,12 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 1
+  m_HDR: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -605,9 +606,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunObjectAnimator: {fileID: 95989758554738006}
-  endOfBarrel: {fileID: 4237148456244066}
-  LandingZone: {fileID: 1621104231981744, guid: cc75b06dca8590a4a9c0fbda3a169cc0,
+  landingZonePrefab: {fileID: 1621104231981744, guid: cc75b06dca8590a4a9c0fbda3a169cc0,
     type: 2}
+  healthMax: 3
+  invicabilityTime: 1
 --- !u!114 &114566300608489676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -621,6 +623,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerNumber: 8
   maxDistance: 500
+  mainCamera: {fileID: 20820570184939998}
+  damage: 1
 --- !u!114 &114568646497637544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,6 +727,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!114 &114668387666289200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953623186261234}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 0c4e7b72f6614af459a2fcc175bbeb02, type: 2}
 --- !u!114 &114670545518597634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -735,7 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomLevel: 30
-  animator: {fileID: 95989758554738006}
+  gunAnimator: {fileID: 95989758554738006}
 --- !u!114 &114869603922081188
 MonoBehaviour:
   m_ObjectHideFlags: 1

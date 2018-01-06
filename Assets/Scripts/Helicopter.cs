@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Helicopter : MonoBehaviour {
 
-	public AudioClip heliInitialCallResponse;
+	[SerializeField][Tooltip ("Sound Effect to played when the Helicopter responds to player call.")]
+	private AudioClip heliInitialCallResponse;
 
 	private bool called = false;
 

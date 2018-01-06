@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	private GameObject[] spawnPoints;
-	private bool respawn = false;
-
 	[SerializeField][Tooltip ("The Gun Gameobject with animator component.")]
 	private Animator gunObjectAnimator = null;
-
+	[SerializeField][Tooltip ("The Landing Zone Prefab to instantiate when the flare is dropped.")]
+	private GameObject landingZonePrefab = null;
 	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
 	private int healthMax = 3;
-	private int healthCurrent;
-
 	[SerializeField][Tooltip ("The time that must pass after a hit before another can registered.")]
 	private float invicabilityTime = 0.3f;
+
+	private GameObject[] spawnPoints;
+	private int healthCurrent;
 	private float timeSinceHit = 0f;
+	private bool respawn = false;
 
 	public delegate void OnPlayerHit();
 	public OnPlayerHit playerHitObservers;
-
-	public GameObject LandingZone;
 
 	// Use this for initialization
 	void Start () {
@@ -51,7 +49,7 @@ public class Player : MonoBehaviour {
 	}
 
 	private void DropFlare(){
-		Instantiate (LandingZone, transform.position, transform.rotation);
+		Instantiate (landingZonePrefab, transform.position, transform.rotation);
 	}
 
 	public void Hit(int damage){
@@ -68,7 +66,7 @@ public class Player : MonoBehaviour {
 
 	private void Die(){
 		respawn = true;
-		// Play Death Sound Clip
+		// TODO Play Death Sound Clip
 		Debug.Log ("Respawning the player!");
 	}
 

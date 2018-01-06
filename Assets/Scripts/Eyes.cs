@@ -14,7 +14,7 @@ public class Eyes : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		eyeCamera = gameObject.GetComponent<Camera> ();
+		eyeCamera = Camera.main;
 		baseFOV = eyeCamera.fieldOfView;
 	}
 	

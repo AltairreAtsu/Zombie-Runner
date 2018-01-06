@@ -9,13 +9,10 @@ public class HeloCollider : MonoBehaviour {
 	private bool obstructed = false;
 	private bool foundClearArea = false;
 
-
-	// Use this for initialization
 	void Start () {
 		colliding = new List<Collider> (10);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if(Time.time - startTime > 1 && !obstructed && !foundClearArea && Time.realtimeSinceStartup > 10f){
 			SendMessageUpwards("OnFindClearArea");

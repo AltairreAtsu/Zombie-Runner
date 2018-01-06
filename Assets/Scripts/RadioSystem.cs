@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RadioSystem : MonoBehaviour {
+	[SerializeField][Tooltip ("Clip to be played when the player calls the Helicopter")]
+	private AudioClip initialCall;
+	[SerializeField][Tooltip ("Clip to be played when the Helicopter responds to the call.")]
+	private AudioClip callReply;
 
 	private AudioSource audioSource;
 
-	public AudioClip initialCall;
-	public AudioClip callReply;
-
-	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
 	}

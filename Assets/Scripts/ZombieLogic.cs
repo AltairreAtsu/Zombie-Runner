@@ -4,22 +4,18 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 public class ZombieLogic : MonoBehaviour {
-
-	private Player Player;
-
 	[SerializeField][Tooltip ("Range from which Zombies can hit the player.")]
 	private float attackDistance = 2.5f;
-
 	[SerializeField][Tooltip ("Number of hits a zombie can take before dying.")]
 	private int health = 2;
-
 	[SerializeField][Tooltip ("Time after a hit before another hit can be registered.")]
 	private float invicabilityTime = 0.3f;
-	private float timeSinceHit = 0f;
-
-	[SerializeField]
+	[SerializeField][Tooltip ("Sound Clip to be played when the zombie dies.")]
 	private AudioClip deathClip = null;
+
 	private AudioSource audioSource = null;
+	private Player Player;
+	private float timeSinceHit = 0f;
 
 	public delegate void OnZombieKilled(Transform zombiePostion);
 	public static OnZombieKilled OnZombieKilledObservers;
@@ -30,13 +26,11 @@ public class ZombieLogic : MonoBehaviour {
 
 		gameObject.GetComponent<AICharacterControl> ().target = Player.transform;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		timeSinceHit += Time.deltaTime;
 		if(DistanceToPlayer() <= attackDistance){
-			// Play Attack Animation
-			Debug.Log ("Can Attack Player!");
+			// TODO Play Attack Animation
 			Player.Hit (1);
 		}
 	}
@@ -47,7 +41,7 @@ public class ZombieLogic : MonoBehaviour {
 			timeSinceHit = 0f;
 
 			if (health <= 0) {
-				// Play Death Animation
+				// TODO Play Death Animation
 				OnZombieKilledObservers(transform);
 				Object.Destroy (gameObject);
 			}
