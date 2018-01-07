@@ -17,9 +17,9 @@ public class UIManager : MonoBehaviour {
 	private Player player;
 	private Helicopter helicopter;
 	private AlphaLerp bloodOverlay;
-	private float timeSurvived = 0f;
 
-	private int killCount = 0;
+	public static float timeSurvived = 0f;
+	public static int killCount = 0;
 
 	// Use this for initialization
 	private void Start () {
@@ -31,6 +31,9 @@ public class UIManager : MonoBehaviour {
 		ZombieLogic.OnZombieKilledObservers += OnZombieKilled;
 
 		killCounter.text = "";
+
+		killCount = 0;
+		timeSurvived = 0;
 	}
 
 	private void Update() {
@@ -55,7 +58,7 @@ public class UIManager : MonoBehaviour {
 		killCounter.text = (killCount.ToString());
 	}
 
-	private string ParseTime(){
+	public static string ParseTime(){
 		float minutes = Mathf.Floor (timeSurvived / 60);
 		if(minutes > 0){
 			float seconds = Mathf.Floor(timeSurvived - (60 * minutes));

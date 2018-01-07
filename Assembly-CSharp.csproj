@@ -193,6 +193,7 @@
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
      <Compile Include="Assets\Scripts\AlphaLerp.cs" />
      <Compile Include="Assets\Scripts\DayNightCycle.cs" />
+     <Compile Include="Assets\Scripts\EndUI.cs" />
      <Compile Include="Assets\Scripts\Eyes.cs" />
      <Compile Include="Assets\Scripts\FireGun.cs" />
      <Compile Include="Assets\Scripts\Helicopter.cs" />

@@ -16,9 +16,11 @@ public class RadioSystem : MonoBehaviour {
 
 	private AudioSource audioSource = null;
 	private LandingZone landingZone = null;
+	private LevelManager levelManager = null;
 
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
+		levelManager = GetComponent<LevelManager> ();
 	}
 
 	void OnMakeInitialHeliCall () {
@@ -48,5 +50,10 @@ public class RadioSystem : MonoBehaviour {
 	void OnVictory (){
 		audioSource.clip = victoryClip;
 		audioSource.Play ();
+		Invoke ("FinishLevel", victoryClip.length);
+	}
+
+	void FinishLevel(){
+		levelManager.LoadLevel (2);
 	}
 }
