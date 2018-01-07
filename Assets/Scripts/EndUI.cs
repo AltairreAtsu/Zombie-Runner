@@ -14,5 +14,7 @@ public class EndUI : MonoBehaviour {
 	void Start () {
 		timeSurvivedDisplay.text = UIManager.ParseTime();
 		killCountDisplay.text = UIManager.killCount.ToString();
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 	}
 }

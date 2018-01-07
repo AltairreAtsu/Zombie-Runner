@@ -1,9 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AlphaLerp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RadioSystem.cs">
     <Files>
-      <File FileName="Assets\Scripts\Helicopter.cs" Line="29" Column="22" />
-      <File FileName="Assets\Scripts\AlphaLerp.cs" Line="41" Column="24" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="13" Column="23" />
+      <File FileName="Assets\Scripts\Player.cs" Line="62" Column="82" />
+      <File FileName="Assets\Scripts\Helicopter.cs" Line="94" Column="28" />
+      <File FileName="Assets\Scripts\UIManager.cs" Line="22" Column="8" />
+      <File FileName="Assets\Scripts\EndUI.cs" Line="16" Column="56" />
+      <File FileName="Assets\Scripts\RadioSystem.cs" Line="19" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
