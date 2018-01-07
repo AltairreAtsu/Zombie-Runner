@@ -20,7 +20,6 @@ public class Player : MonoBehaviour {
 	private GameObject[] spawnPoints;
 	private int healthCurrent;
 	private float timeSinceHit = 0f;
-	private bool respawn = false;
 
 	public delegate void OnPlayerHit();
 	public OnPlayerHit playerHitObservers;
@@ -32,11 +31,6 @@ public class Player : MonoBehaviour {
 
 	void Update(){
 		timeSinceHit += Time.deltaTime;
-
-		if(respawn){
-			Respawn ();
-			respawn = false;
-		}
 
 		if(Input.GetAxis("Fire1") > 0.5f){
 			gunObjectAnimator.SetBool ("Firing", true);
@@ -69,15 +63,13 @@ public class Player : MonoBehaviour {
 			playerHitObservers ();
 
 			if (healthCurrent <= 0) {
-				Die ();
+				Respawn ();
 			}
 		}
 	}
 
-	private void Die(){
-		respawn = true;
-		// TODO Play Death Sound Clip
-		Debug.Log ("Respawning the player!");
+	public void KillPlayer(){
+		Hit (healthMax);
 	}
 
 	private void Respawn(){

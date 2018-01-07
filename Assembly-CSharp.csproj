@@ -206,6 +206,7 @@
      <Compile Include="Assets\Scripts\RadioSystem.cs" />
      <Compile Include="Assets\Scripts\SpawnPointGizmo.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
+     <Compile Include="Assets\Scripts\WaterTrigger.cs" />
      <Compile Include="Assets\Scripts\ZombieLogic.cs" />
      <Compile Include="Assets\Scripts\ZombieSpawner.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
