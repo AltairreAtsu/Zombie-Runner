@@ -192,6 +192,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114668387666289200, guid: 7cfe2ec254a7ced4f97990770b9ceaa8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cfe2ec254a7ced4f97990770b9ceaa8, type: 2}
   m_IsPrefabParent: 0
@@ -918,6 +923,35 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 108195910926939402, guid: d3d6f4f735823bd4a9b2a084f25914d8,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.6181392
+      objectReference: {fileID: 0}
+    - target: {fileID: 108195910926939402, guid: d3d6f4f735823bd4a9b2a084f25914d8,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.66176474
+      objectReference: {fileID: 0}
+    - target: {fileID: 108195910926939402, guid: d3d6f4f735823bd4a9b2a084f25914d8,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.4184689
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506905709354238, guid: d3d6f4f735823bd4a9b2a084f25914d8, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 108195910926939402, guid: d3d6f4f735823bd4a9b2a084f25914d8,
+        type: 2}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108195910926939402, guid: d3d6f4f735823bd4a9b2a084f25914d8,
+        type: 2}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3d6f4f735823bd4a9b2a084f25914d8, type: 2}
   m_IsPrefabParent: 0
@@ -963,6 +997,11 @@ Prefab:
     - target: {fileID: 1153908807475494, guid: b8e7c2b898a3bed4290a68e0fc9dfeaa, type: 2}
       propertyPath: m_Name
       value: Helicopter
+      objectReference: {fileID: 0}
+    - target: {fileID: 54410375299875874, guid: b8e7c2b898a3bed4290a68e0fc9dfeaa,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8e7c2b898a3bed4290a68e0fc9dfeaa, type: 2}

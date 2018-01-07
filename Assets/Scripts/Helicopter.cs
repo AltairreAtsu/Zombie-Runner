@@ -15,6 +15,8 @@ public class Helicopter : MonoBehaviour {
 	private float offset = 1f;
 	[SerializeField][Tooltip ("The Helicopter Mesh Object.")]
 	private GameObject HelicopterMesh = null;
+	[SerializeField][Tooltip ("Store the Refrence to the particle system here.")]
+	private ParticleSystem landingParticles = null;
 
 
 	private LandingZone landingZone;
@@ -69,6 +71,7 @@ public class Helicopter : MonoBehaviour {
 		// Helicopter Has Landed
 		// TODO Play Helicopter Landed
 		if(landingZone.winMode == false){
+			landingParticles.Play ();
 			SendMessageUpwards("OnHelicopterLanded");
 			landingZone.winMode = true;
 		}

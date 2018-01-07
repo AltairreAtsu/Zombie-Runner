@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RadioSystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ZombieLogic.cs">
     <Files>
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="13" Column="23" />
-      <File FileName="Assets\Scripts\Player.cs" Line="62" Column="82" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="8" Column="35" />
+      <File FileName="Assets\Scripts\Player.cs" Line="26" Column="40" />
       <File FileName="Assets\Scripts\Helicopter.cs" Line="94" Column="28" />
-      <File FileName="Assets\Scripts\UIManager.cs" Line="22" Column="8" />
-      <File FileName="Assets\Scripts\EndUI.cs" Line="16" Column="56" />
-      <File FileName="Assets\Scripts\RadioSystem.cs" Line="19" Column="43" />
+      <File FileName="Assets\Scripts\UIManager.cs" Line="61" Column="1" />
+      <File FileName="Assets\Scripts\RadioSystem.cs" Line="56" Column="21" />
+      <File FileName="Assets\Scripts\FireGun.cs" Line="17" Column="51" />
+      <File FileName="Assets\Scripts\ZombieLogic.cs" Line="21" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
