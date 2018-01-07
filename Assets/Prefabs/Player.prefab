@@ -623,7 +623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc113c10b54e19d48a8a848e985106df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerNumber: 8
   maxDistance: 500
   mainCamera: {fileID: 20820570184939998}
   damage: 1

@@ -18,7 +18,7 @@ public class ZombieLogic : MonoBehaviour {
 	private float timeSinceHit = 0f;
 
 	public delegate void OnZombieKilled(Transform zombiePostion);
-	public static OnZombieKilled OnZombieKilledObservers;
+	public static OnZombieKilled OnZombieKilledObservers = null;
 
 	void Start () {
 		Player = GameObject.FindObjectOfType<Player> ();

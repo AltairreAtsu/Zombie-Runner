@@ -6,9 +6,9 @@ using TMPro;
 public class EndUI : MonoBehaviour {
 
 	[SerializeField]
-	private TextMeshProUGUI timeSurvivedDisplay;
+	private TextMeshProUGUI timeSurvivedDisplay = null;
 	[SerializeField]
-	private TextMeshProUGUI killCountDisplay;
+	private TextMeshProUGUI killCountDisplay = null;
 
 	// Use this for initialization
 	void Start () {

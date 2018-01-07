@@ -908,6 +908,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 108195910926939402, guid: d3d6f4f735823bd4a9b2a084f25914d8,
+        type: 2}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114680959374529306, guid: d3d6f4f735823bd4a9b2a084f25914d8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3d6f4f735823bd4a9b2a084f25914d8, type: 2}
   m_IsPrefabParent: 0
@@ -953,11 +963,6 @@ Prefab:
     - target: {fileID: 1153908807475494, guid: b8e7c2b898a3bed4290a68e0fc9dfeaa, type: 2}
       propertyPath: m_Name
       value: Helicopter
-      objectReference: {fileID: 0}
-    - target: {fileID: 114725477047274072, guid: b8e7c2b898a3bed4290a68e0fc9dfeaa,
-        type: 2}
-      propertyPath: offset
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8e7c2b898a3bed4290a68e0fc9dfeaa, type: 2}
@@ -1401,22 +1406,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114296434829567014, guid: e18a183fb3a0f594ebcb00bad4939875,
+    - target: {fileID: 114450466822344348, guid: e18a183fb3a0f594ebcb00bad4939875,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114296434829567014, guid: e18a183fb3a0f594ebcb00bad4939875,
+    - target: {fileID: 114450466822344348, guid: e18a183fb3a0f594ebcb00bad4939875,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114450466822344348, guid: e18a183fb3a0f594ebcb00bad4939875,
+    - target: {fileID: 114296434829567014, guid: e18a183fb3a0f594ebcb00bad4939875,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114450466822344348, guid: e18a183fb3a0f594ebcb00bad4939875,
+    - target: {fileID: 114296434829567014, guid: e18a183fb3a0f594ebcb00bad4939875,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1

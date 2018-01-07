@@ -386,5 +386,5 @@ MonoBehaviour:
   speed: 20
   landingSpeed: 10
   layerNumber: 9
-  offset: 3
+  offset: 1
   HelicopterMesh: {fileID: 1365216040657208}

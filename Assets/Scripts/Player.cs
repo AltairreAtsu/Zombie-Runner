@@ -25,7 +25,6 @@ public class Player : MonoBehaviour {
 	public delegate void OnPlayerHit();
 	public OnPlayerHit playerHitObservers;
 
-	// Use this for initialization
 	void Start () {
 		spawnPoints = GameObject.FindGameObjectsWithTag ("Spawn Point");
 		healthCurrent = healthMax;

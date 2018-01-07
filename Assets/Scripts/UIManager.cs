@@ -58,6 +58,11 @@ public class UIManager : MonoBehaviour {
 		killCounter.text = (killCount.ToString());
 	}
 
+	private void OnDestroy(){
+		player.playerHitObservers -= OnPlayerHit;
+		ZombieLogic.OnZombieKilledObservers -= OnZombieKilled;
+	}
+
 	public static string ParseTime(){
 		float minutes = Mathf.Floor (timeSurvived / 60);
 		if(minutes > 0){
