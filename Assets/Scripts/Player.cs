@@ -9,8 +9,13 @@ public class Player : MonoBehaviour {
 	private GameObject landingZonePrefab = null;
 	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
 	private int healthMax = 3;
+	[SerializeField][Tooltip ("The Layer Number of the Terrain.")]
+	private int layerNumber = 9; 
 	[SerializeField][Tooltip ("The time that must pass after a hit before another can registered.")]
 	private float invicabilityTime = 0.3f;
+	[SerializeField][Tooltip ("How far off the ground the flare should be placed")]
+	private float offset = 0.2f;
+
 
 	private GameObject[] spawnPoints;
 	private int healthCurrent;
@@ -49,7 +54,13 @@ public class Player : MonoBehaviour {
 	}
 
 	private void DropFlare(){
-		Instantiate (landingZonePrefab, transform.position, transform.rotation);
+		Ray ray = new Ray (transform.position, Vector3.down);
+		RaycastHit rayHit;
+		int layerMask = 1 << layerNumber;
+		Physics.Raycast (ray, out rayHit, 10f, layerMask);
+
+		Vector3 offsetPosition = transform.position + Vector3.down * (rayHit.distance - offset);
+		Instantiate (landingZonePrefab, offsetPosition, transform.rotation);
 	}
 
 	public void Hit(int damage){

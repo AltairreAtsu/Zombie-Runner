@@ -382,9 +382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e791a383fcb98e34ca7b4a2644dd642a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrivalTime: 5
+  arrivalTime: 1
   speed: 20
   landingSpeed: 10
   layerNumber: 9
-  offset: 2
+  offset: 3
   HelicopterMesh: {fileID: 1365216040657208}

@@ -956,7 +956,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114725477047274072, guid: b8e7c2b898a3bed4290a68e0fc9dfeaa,
         type: 2}
-      propertyPath: arrivalTime
+      propertyPath: offset
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1084,12 +1084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4813e6ce21bce045b4ae665055780fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1678456366 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114637599038635966, guid: e18a183fb3a0f594ebcb00bad4939875,
-    type: 2}
-  m_PrefabInternal: {fileID: 2106712020}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1825556831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialCall: {fileID: 8300000, guid: d820bfda6b5b74e36a0637de9ed0cd61, type: 3}
-  callReply: {fileID: 8300000, guid: 53f65e57d6bf34c7592571f82475f66f, type: 3}
+  callReply: {fileID: 8300000, guid: ab81e342d5e5b52409ca98665a159e84, type: 3}
+  seeFlare: {fileID: 8300000, guid: 8860c47f767fb9347953bf1d68990342, type: 3}
+  arrivedAtLZ: {fileID: 8300000, guid: 6e1beb588402be242920e4d6975b7b00, type: 3}
+  victoryClip: {fileID: 8300000, guid: 580df32c3abc824459e9d956aa6b9ca2, type: 3}
 --- !u!82 &1967015584
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1422,11 +1419,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114508994745792126, guid: e18a183fb3a0f594ebcb00bad4939875,
-        type: 2}
-      propertyPath: helicopterSlider
-      value: 
-      objectReference: {fileID: 1678456366}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e18a183fb3a0f594ebcb00bad4939875, type: 2}
   m_IsPrefabParent: 0

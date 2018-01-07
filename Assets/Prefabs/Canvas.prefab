@@ -455,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killCounter: {fileID: 114450466822344348}
   timer: {fileID: 114296434829567014}
+  helicopterSlider: {fileID: 114637599038635966}
   killPopUpPrefab: {fileID: 1763106503257402, guid: f644f7a53fac8b54aaa4529bf7cb85f9,
     type: 2}
 --- !u!114 &114562727522840716

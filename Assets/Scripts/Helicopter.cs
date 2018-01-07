@@ -17,8 +17,7 @@ public class Helicopter : MonoBehaviour {
 	private GameObject HelicopterMesh = null;
 
 
-	private GameObject landingZone;
-	private Rigidbody heliRigidbody;
+	private LandingZone landingZone;
 	private bool called = false;
 	private bool dispatched = false;
 
@@ -26,7 +25,6 @@ public class Helicopter : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
-		heliRigidbody = gameObject.GetComponent<Rigidbody> ();
 
 		passedTime = 0f;
 		arrivalTime = arrivalTime * 60;
@@ -36,7 +34,7 @@ public class Helicopter : MonoBehaviour {
 	// Call Method
 	public void OnDispatchHelicopter () {
 		Debug.Log ("Helicopter Dispatched!");
-		landingZone = GameObject.FindGameObjectWithTag ("Landing Zone");
+		landingZone = GameObject.FindObjectOfType<LandingZone>();
 		called = true;
 	}
 
@@ -70,16 +68,21 @@ public class Helicopter : MonoBehaviour {
 
 		// Helicopter Has Landed
 		// TODO Play Helicopter Landed
+		if(landingZone.winMode == false){
+			SendMessageUpwards("OnHelicopterLanded");
+			landingZone.winMode = true;
+		}
 	}
 
 	private void Dispatch(){
 		HelicopterMesh.SetActive (true);
 
-		transform.LookAt(landingZone.transform.position);
+		transform.LookAt(landingZone.gameObject.transform.position);
 		transform.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
 		dispatched = true;
 
 		// TODO play Helicopter Sees Flare
+		SendMessageUpwards("OnHelicopterSpawned");
 	}
 
 	private float? GetDistanceToGround(){
@@ -88,7 +91,7 @@ public class Helicopter : MonoBehaviour {
 		int layerMask = 1 << layerNumber;
 
 		if(Physics.Raycast(ray, out rayHit, 300f, layerMask)){
-			return rayHit.distance + offset;
+			return rayHit.distance - offset;
 		}
 
 		return null;
