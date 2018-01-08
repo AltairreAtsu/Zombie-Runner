@@ -297,6 +297,7 @@ MonoBehaviour:
   timeBetweenSpawnsMax: 15
   timeBetweenSpawnsMin: 5
   spawnChance: 0.05
+  spawnDistance: 20
 --- !u!1 &167236384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,12 +1480,12 @@ Prefab:
     - target: {fileID: 224073530998299564, guid: e18a183fb3a0f594ebcb00bad4939875,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224073530998299564, guid: e18a183fb3a0f594ebcb00bad4939875,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e18a183fb3a0f594ebcb00bad4939875, type: 2}
