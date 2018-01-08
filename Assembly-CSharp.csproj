@@ -51,69 +51,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\RollerBall\Scripts\Ball.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\RollerBall\Scripts\BallUserControl.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\Explosive.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\ActivateTrigger.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\AlphaButtonClickMask.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\AutoMoveAndRotate.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\CameraRefocus.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\CurveControlledBob.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\DragRigidbody.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\DynamicShadowSettings.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\EventSystemChecker.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\FollowTarget.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\ForcedReset.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\FOVKick.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\FPSCounter.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\LerpControlledBob.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\ObjectResetter.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\PlatformSpecificContent.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\SimpleMouseRotator.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\SmoothFollow.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\TimedObjectActivator.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\TimedObjectDestructor.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\WaypointCircuit.cs" />
-     <Compile Include="Assets\_Imports\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\Entities\Helicopter\Helicopter.cs" />
+     <Compile Include="Assets\Entities\Landing Zone\LandingZone.cs" />
+     <Compile Include="Assets\Entities\Player\Eyes.cs" />
+     <Compile Include="Assets\Entities\Player\FireGun.cs" />
+     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
+     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\HeadBob.cs" />
+     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
+     <Compile Include="Assets\Entities\Player\HeloCollider.cs" />
+     <Compile Include="Assets\Entities\Player\InnerVoice.cs" />
+     <Compile Include="Assets\Entities\Player\Player.cs" />
+     <Compile Include="Assets\Entities\Zombie\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
+     <Compile Include="Assets\Entities\Zombie\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
+     <Compile Include="Assets\Entities\Zombie\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
+     <Compile Include="Assets\Entities\Zombie\ZombieLogic.cs" />
+     <Compile Include="Assets\Entities\Zombie\ZombieSpawner.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -159,24 +112,6 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
-     <Compile Include="Assets\Scripts\AlphaLerp.cs" />
-     <Compile Include="Assets\Scripts\DayNightCycle.cs" />
-     <Compile Include="Assets\Scripts\EndUI.cs" />
-     <Compile Include="Assets\Scripts\Eyes.cs" />
-     <Compile Include="Assets\Scripts\FireGun.cs" />
-     <Compile Include="Assets\Scripts\Helicopter.cs" />
-     <Compile Include="Assets\Scripts\HeloCollider.cs" />
-     <Compile Include="Assets\Scripts\InnerVoice.cs" />
-     <Compile Include="Assets\Scripts\KillPopUp.cs" />
-     <Compile Include="Assets\Scripts\LandingZone.cs" />
-     <Compile Include="Assets\Scripts\LevelManager.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\RadioSystem.cs" />
-     <Compile Include="Assets\Scripts\SpawnPointGizmo.cs" />
-     <Compile Include="Assets\Scripts\UIManager.cs" />
-     <Compile Include="Assets\Scripts\WaterTrigger.cs" />
-     <Compile Include="Assets\Scripts\ZombieLogic.cs" />
-     <Compile Include="Assets\Scripts\ZombieSpawner.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -209,12 +144,19 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+     <Compile Include="Assets\UI\AlphaLerp.cs" />
+     <Compile Include="Assets\UI\EndUI.cs" />
+     <Compile Include="Assets\UI\Kill Pop Up\KillPopUp.cs" />
+     <Compile Include="Assets\UI\UIManager.cs" />
+     <Compile Include="Assets\Utility Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Utility Scripts\RadioSystem.cs" />
+     <Compile Include="Assets\Utility Scripts\SpawnPointGizmo.cs" />
+     <Compile Include="Assets\World Space\DayNightCycle.cs" />
+     <Compile Include="Assets\World Space\WaterTrigger.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\_Imports\START PACK\Helicopter\Info.txt" />
+     <None Include="Assets\Entities\Helicopter\Info.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
@@ -225,8 +167,6 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
      <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
@@ -234,10 +174,8 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\ImageEffects\Readme.txt" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
@@ -247,34 +185,24 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
-     <None Include="Assets\_Imports\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald Bold - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <None Include="Assets\_Imports\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\NotoSans - License.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-     <None Include="Assets\_Imports\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\_Imports\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
      <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
-     <None Include="Assets\_Imports\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
@@ -282,17 +210,11 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Entities\Zombie\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-     <None Include="Assets\_Imports\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Entities\Player\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
-     <None Include="Assets\_Imports\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-     <None Include="Assets\_Imports\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
-     <None Include="Assets\_Imports\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
  <Reference Include="UnityEngine.UI">
@@ -373,6 +295,12 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
+ <HintPath>C:/Users/Marc Taurasi/Documents/Unity/Projects/Zombie Runner/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
+ <HintPath>C:/Users/Marc Taurasi/Documents/Unity/Projects/Zombie Runner/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Users/Marc Taurasi/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
@@ -394,12 +322,10 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Marc Taurasi/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
- <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
- <HintPath>C:/Users/Marc Taurasi/Documents/Unity/Projects/Zombie Runner/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
- </Reference>
- <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
- <HintPath>C:/Users/Marc Taurasi/Documents/Unity/Projects/Zombie Runner/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
- </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{30B50F3C-A557-CC71-92D2-13826431A744}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
