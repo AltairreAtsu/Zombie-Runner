@@ -13,13 +13,17 @@ public class ZombieSpawner : MonoBehaviour {
 	private float timeBetweenSpawnsMin = 5f;
 	[SerializeField][Range (0f, 1f)][Tooltip ("Base chance a zombie will spawn durring spawn tick.")]
 	private float spawnChance = 0.05f;
+	[SerializeField][Tooltip ("How far a spawn point must be from the player to spawn a zombie.")]
+	private float spawnDistance = 20f;
 
 	private GameObject zombieParent;
+	private Player player;
 	private float timeSinceLastSpawn;
 	private int zombieCount;
 
 	private void Start() {
 		zombieParent = GameObject.Find ("Zombies");
+		player = GameObject.FindObjectOfType<Player> ();
 
 		if(zombieParent == null){
 			zombieParent = new GameObject ("Zombies");
@@ -49,13 +53,25 @@ public class ZombieSpawner : MonoBehaviour {
 	}
 
 	public void SpawnZombie(){
-		int childIndex = Random.Range (0, transform.childCount);
-		Transform spawnPos = transform.GetChild ( childIndex );
+		Transform spawnPos = RandomSpawnPoint ();
 
 		GameObject zombie = Object.Instantiate (zombiePrefab, spawnPos) as GameObject;
 		zombie.transform.SetParent (zombieParent.transform, true);
 		zombieCount++;
 		timeSinceLastSpawn = 0f;
+	}
+
+	private Transform RandomSpawnPoint(){
+		float differentialFloat = 0f;
+		Transform spawnPos = null;
+
+		while ((differentialFloat == 0f) && (differentialFloat < spawnDistance)){
+			int childIndex = Random.Range (0, transform.childCount);
+			spawnPos = transform.GetChild ( childIndex );
+			differentialFloat = Mathf.Abs(player.transform.position.magnitude - spawnPos.position.magnitude);
+		}
+
+		return spawnPos;
 	}
 
 	private void OnZombieKilled(Transform zombiePosition){
