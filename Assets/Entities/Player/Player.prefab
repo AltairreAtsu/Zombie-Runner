@@ -145,7 +145,6 @@ GameObject:
   - component: {fileID: 81551010635762448}
   - component: {fileID: 124376358949412346}
   - component: {fileID: 114670545518597634}
-  - component: {fileID: 114668387666289200}
   m_Layer: 0
   m_Name: FirstPersonCamera
   m_TagString: MainCamera
@@ -592,8 +591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb7c0e8082f9024183b8df62868ab09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatHappened: {fileID: 8300000, guid: 6f49368f721214fcc81fda6a7ccf9343, type: 3}
-  goodLandingArea: {fileID: 8300000, guid: 0f00476efd1774d2587939e6bd1a6bb4, type: 3}
+  whatHappened: {fileID: 8300000, guid: 8df4286d2a27b7448b02df36aef2f7d7, type: 3}
+  goodLandingArea: {fileID: 8300000, guid: 22c3014044361594491edc25a131c3de, type: 3}
 --- !u!114 &114319816358967582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -728,18 +727,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
---- !u!114 &114668387666289200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1953623186261234}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 0c4e7b72f6614af459a2fcc175bbeb02, type: 2}
 --- !u!114 &114670545518597634
 MonoBehaviour:
   m_ObjectHideFlags: 1
