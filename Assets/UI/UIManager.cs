@@ -9,12 +9,16 @@ public class UIManager : MonoBehaviour {
 	private TextMeshProUGUI killCounter = null;
 	[SerializeField][Tooltip ("Store the Refrence to the Timer UI Element in here.")]
 	private TextMeshProUGUI timer = null;
+    [SerializeField][Tooltip ("Store the Refrence to the Ammo UI here.")]
+    private TextMeshProUGUI ammoDisplay = null;
 	[SerializeField][Tooltip ("Store the Refrence to the Slider UI Element in here.")]
 	private Slider helicopterSlider = null;
+    [Space]
 	[SerializeField][Tooltip ("The Kill UI Pop Up prefab to instantiate when a zombie is killed.")]
 	private GameObject killPopUpPrefab = null;
 
 	private Player player;
+    private FireGun gun;
 	private Helicopter helicopter;
 	private AlphaLerp bloodOverlay;
 
@@ -24,6 +28,7 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	private void Start () {
 		player = GameObject.FindObjectOfType<Player> ();
+        gun = player.transform.GetComponentInChildren<FireGun>();
 		helicopter = GameObject.FindObjectOfType<Helicopter>();
 		bloodOverlay = GetComponentInChildren<AlphaLerp> ();
 
@@ -39,6 +44,7 @@ public class UIManager : MonoBehaviour {
 	private void Update() {
 		timeSurvived += Time.deltaTime;
 		timer.text = ParseTime ();
+        ammoDisplay.text = gun.getAmmo().ToString();
 
 		helicopterSlider.value = Mathf.Lerp (1, 0, helicopter.passedTime / helicopter.GetArrivalTime());
 	}

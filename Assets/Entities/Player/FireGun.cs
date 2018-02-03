@@ -5,13 +5,49 @@ using UnityEngine;
 public class FireGun : MonoBehaviour {
 	[SerializeField][Tooltip ("The maximum distance a Raycast from the gun can travel.")]
 	private float maxDistance = 500f;
-	[SerializeField][Tooltip ("The Main Camera for the scne.")]
-	private Camera mainCamera = null;
-	[SerializeField][Tooltip ("The Damage each fired shot does.")]
+    [Space]
+    [SerializeField][Tooltip ("The Damage each fired shot does.")]
 	private int damage = 1;
+    [SerializeField][Tooltip ("Maximum number of shots before the player has to reload.")]
+    private int maxAmmo = 20;
+    [SerializeField][Tooltip ("The time it takes to complete a reload")]
+    private float reloadTime = 1f;
+    [Space]
+    [SerializeField][Tooltip("Sound to be played when the player fires the gun.")]
+    private AudioClip fireGunSund = null;
+    [SerializeField][Tooltip ("Sound to be played when the player reloads the gun.")]
+    private AudioClip reloadSound = null;
 
-	private void Fire (){
-		Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+    private int ammo = 20;
+    private AudioSource audioSource = null;
+    private Animator gunAnimator = null;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        gunAnimator = GetComponent<Animator>();
+    }
+
+    private void Fire (){
+        if (gunAnimator.GetBool("Reloading"))
+            return;
+
+        if (ammo <= 0)
+        {
+            audioSource.clip = reloadSound;
+            audioSource.Play();
+            gunAnimator.SetBool("Reloading", true);
+            Invoke("Reload", reloadTime);
+            return;
+        }
+
+        if(audioSource.clip != fireGunSund)
+            audioSource.clip = fireGunSund;
+
+        ammo--;
+        audioSource.Play();
+
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
 		RaycastHit rayHit;
 
 		if (Physics.Raycast(ray, out rayHit, maxDistance)){
@@ -23,5 +59,14 @@ public class FireGun : MonoBehaviour {
 		}
 	}
 
+    private void Reload()
+    {
+        ammo = maxAmmo;
+        gunAnimator.SetBool("Reloading", false);
+    }
 
+    public int getAmmo()
+    {
+        return ammo;
+    }
 }
