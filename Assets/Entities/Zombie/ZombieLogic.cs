@@ -7,7 +7,7 @@ public class ZombieLogic : MonoBehaviour {
 	[SerializeField][Tooltip ("Range from which Zombies can hit the player.")]
 	private float attackDistance = 2.5f;
 	[SerializeField][Tooltip ("Number of hits a zombie can take before dying.")]
-	private int health = 2;
+	private float health = 2;
 	[SerializeField][Tooltip ("Time after a hit before another hit can be registered.")]
 	private float invicabilityTime = 0.3f;
 	[SerializeField][Tooltip ("Sound Clip to be played when the zombie dies.")]
@@ -35,7 +35,7 @@ public class ZombieLogic : MonoBehaviour {
 		}
 	}
 
-	public void Hit (int damage) {
+	public void Hit (float damage) {
 		if (timeSinceHit >= invicabilityTime) {
 			health -= damage;
 			timeSinceHit = 0f;

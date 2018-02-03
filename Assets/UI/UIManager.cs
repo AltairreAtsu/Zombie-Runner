@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour {
     private TextMeshProUGUI ammoDisplay = null;
 	[SerializeField][Tooltip ("Store the Refrence to the Slider UI Element in here.")]
 	private Slider helicopterSlider = null;
+    [SerializeField][Tooltip ("Store the Refrence to the Health UI image here.")]
+    private Image healthImage = null;
     [Space]
 	[SerializeField][Tooltip ("The Kill UI Pop Up prefab to instantiate when a zombie is killed.")]
 	private GameObject killPopUpPrefab = null;
@@ -45,6 +47,7 @@ public class UIManager : MonoBehaviour {
 		timeSurvived += Time.deltaTime;
 		timer.text = ParseTime ();
         ammoDisplay.text = gun.getAmmo().ToString();
+        healthImage.fillAmount = player.getHealthPercentage();
 
 		helicopterSlider.value = Mathf.Lerp (1, 0, helicopter.passedTime / helicopter.GetArrivalTime());
 	}

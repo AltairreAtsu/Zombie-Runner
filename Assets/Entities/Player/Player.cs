@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 	[SerializeField][Tooltip ("The Landing Zone Prefab to instantiate when the flare is dropped.")]
 	private GameObject landingZonePrefab = null;
 	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
-	private int healthMax = 3;
+	private float healthMax = 3;
 	[SerializeField][Tooltip ("The Layer Number of the Terrain.")]
 	private int layerNumber = 9; 
 	[SerializeField][Tooltip ("The time that must pass after a hit before another can registered.")]
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 
 
 	private GameObject[] spawnPoints;
-	private int healthCurrent;
+	private float healthCurrent;
 	private float timeSinceHit = 0f;
 
 	public delegate void OnPlayerHit();
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour {
 		Instantiate (landingZonePrefab, offsetPosition, transform.rotation);
 	}
 
-	public void Hit(int damage){
+	public void Hit(float damage){
 		if (timeSinceHit >= invicabilityTime) {
 			healthCurrent -= damage;
 			timeSinceHit = 0f;
@@ -81,5 +81,10 @@ public class Player : MonoBehaviour {
 
 		healthCurrent = healthMax;
 	}
+
+    public float getHealthPercentage()
+    {
+        return healthCurrent / healthMax;
+    }
 
 }
