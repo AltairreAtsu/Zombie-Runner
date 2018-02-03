@@ -5,28 +5,63 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	[SerializeField][Tooltip ("The Gun Gameobject with animator component.")]
 	private Animator gunObjectAnimator = null;
-	[SerializeField][Tooltip ("The Landing Zone Prefab to instantiate when the flare is dropped.")]
-	private GameObject landingZonePrefab = null;
+
 	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
 	private float healthMax = 3;
-	[SerializeField][Tooltip ("The Layer Number of the Terrain.")]
-	private int layerNumber = 9; 
-	[SerializeField][Tooltip ("The time that must pass after a hit before another can registered.")]
-	private float invicabilityTime = 0.3f;
-	[SerializeField][Tooltip ("How far off the ground the flare should be placed")]
+
+    [SerializeField]
+    [Tooltip("The time that must pass after a hit before another can registered.")]
+    private float invicabilityTime = 0.3f;
+
+    [Space]
+
+    [SerializeField]
+    [Tooltip("The Landing Zone Prefab to instantiate when the flare is dropped.")]
+    private GameObject landingZonePrefab = null;
+
+    [SerializeField]
+    [Tooltip("The Layer Number of the Terrain.")]
+    private int layerNumber = 9;
+
+    [SerializeField]
+    [Tooltip ("How far off the ground the flare should be placed")]
 	private float offset = 0.2f;
 
+    [Space]
 
-	private GameObject[] spawnPoints;
+    [SerializeField]
+    [Tooltip ("The AudioSource Priority for the player hurt and die sounds.")]
+    private int audioSourcePriority = 126;
+
+    [SerializeField]
+    [Tooltip ("Store all sound effects to be played on player hurt here.")]
+    private AudioClip[] hurtSounds = null;
+
+    [SerializeField]
+    [Tooltip ("Store all sound effects to be played on player death here.")]
+    private AudioClip[] dieSounds = null;
+
 	private float healthCurrent;
 	private float timeSinceHit = 0f;
 
-	public delegate void OnPlayerHit();
+    private AudioSource audioSource = null;
+    private GameObject[] spawnPoints = null;
+
+    public delegate void OnPlayerHit();
 	public OnPlayerHit playerHitObservers;
 
 	void Start () {
 		spawnPoints = GameObject.FindGameObjectsWithTag ("Spawn Point");
-		healthCurrent = healthMax;
+
+        foreach (AudioSource source in GetComponents<AudioSource>())
+        {
+            if(source.priority == audioSourcePriority)
+            {
+                audioSource = source;
+            }
+        }
+
+        healthCurrent = healthMax;
 	}
 
 	void Update(){
@@ -63,9 +98,15 @@ public class Player : MonoBehaviour {
 			playerHitObservers ();
 
 			if (healthCurrent <= 0) {
-				Respawn ();
+                audioSource.clip = dieSounds[Random.Range(0, dieSounds.Length)];
+                audioSource.Play();
+                Respawn ();
+                return;
 			}
-		}
+
+            audioSource.clip = hurtSounds[Random.Range(0, hurtSounds.Length)];
+            audioSource.Play();
+        }
 	}
 
 	public void KillPlayer(){

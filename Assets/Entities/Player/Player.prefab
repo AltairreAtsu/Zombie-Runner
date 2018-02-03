@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114568646497637544}
   - component: {fileID: 54007062147397814}
   - component: {fileID: 82859840904999258}
+  - component: {fileID: 82506710173099588}
   - component: {fileID: 114319816358967582}
   m_Layer: 0
   m_Name: Player
@@ -484,6 +485,86 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82506710173099588
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324656721942990}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 127
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82859840904999258
 AudioSource:
   m_ObjectHideFlags: 1
@@ -581,7 +662,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 129
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -686,12 +767,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunObjectAnimator: {fileID: 95989758554738006}
+  healthMax: 3
+  invicabilityTime: 1
   landingZonePrefab: {fileID: 1621104231981744, guid: cc75b06dca8590a4a9c0fbda3a169cc0,
     type: 2}
-  healthMax: 3
   layerNumber: 9
-  invicabilityTime: 1
   offset: 0.2
+  audioSourcePriority: 127
+  hurtSounds:
+  - {fileID: 8300000, guid: ef4a8ceb3d079bd4b96b26d19a09d3ec, type: 3}
+  - {fileID: 8300000, guid: 2b9830613fd94dc4aa2a765910616803, type: 3}
+  - {fileID: 8300000, guid: 839da66763400a643bb7f202888cd23e, type: 3}
+  - {fileID: 8300000, guid: 2d8f646e225e3ac46ac2b2ce692d59bf, type: 3}
+  - {fileID: 8300000, guid: e73a9eefb5226c7498c998f47c6fc7c6, type: 3}
+  dieSounds:
+  - {fileID: 8300000, guid: a92f8bf33be24674189fe8c8798101d7, type: 3}
+  - {fileID: 8300000, guid: a8653428f1bd991448d98fbd6bcc509f, type: 3}
+  - {fileID: 8300000, guid: c71dcab8b1c44e04ebe1775b91a70a64, type: 3}
 --- !u!114 &114566300608489676
 MonoBehaviour:
   m_ObjectHideFlags: 1
