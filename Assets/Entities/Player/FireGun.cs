@@ -32,6 +32,8 @@ public class FireGun : MonoBehaviour {
         if (gunAnimator.GetBool("Reloading"))
             return;
 
+        ammo--;
+
         if (ammo <= 0)
         {
             audioSource.clip = reloadSound;
@@ -44,7 +46,6 @@ public class FireGun : MonoBehaviour {
         if(audioSource.clip != fireGunSund)
             audioSource.clip = fireGunSund;
 
-        ammo--;
         audioSource.Play();
 
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
