@@ -2636,9 +2636,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 2.5
+  attackDelay: 1
+  damage: 1
   health: 2
   invicabilityTime: 0.1
-  deathClip: {fileID: 0}
+  attackSounds:
+  - {fileID: 8300000, guid: c2b16634e80e930469b5323c364cf6af, type: 3}
+  - {fileID: 8300000, guid: e663dd2ed845ac44198d7366c71445da, type: 3}
+  - {fileID: 8300000, guid: 3292274e9d96b8b4fbaf9a1fd72202ff, type: 3}
 --- !u!114 &114602171621049090
 MonoBehaviour:
   m_ObjectHideFlags: 1
