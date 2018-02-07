@@ -29,6 +29,12 @@ public class ZombieLogic : MonoBehaviour {
     [Space]
 
     [SerializeField]
+    [Tooltip ("Store the refrence to the Hip bone here.")]
+    private Transform hipTransform = null;
+
+    [Space]
+
+    [SerializeField]
     [Tooltip ("Sound Effects to be played when the zombie starts attacking.")]
     private AudioClip[] attackSounds = null;
 
@@ -84,7 +90,7 @@ public class ZombieLogic : MonoBehaviour {
 
 			if (health <= 0) {
 				// TODO Play Death Animation
-				OnZombieKilledObservers(transform);
+				OnZombieKilledObservers(hipTransform);
 				Object.Destroy (gameObject);
 			}
 		}

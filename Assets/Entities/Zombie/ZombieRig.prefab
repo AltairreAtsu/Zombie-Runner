@@ -2640,6 +2640,7 @@ MonoBehaviour:
   damage: 1
   health: 2
   invicabilityTime: 0.1
+  hipTransform: {fileID: 4151146197291262}
   attackSounds:
   - {fileID: 8300000, guid: c2b16634e80e930469b5323c364cf6af, type: 3}
   - {fileID: 8300000, guid: e663dd2ed845ac44198d7366c71445da, type: 3}

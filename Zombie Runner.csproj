@@ -366,7 +366,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\UI\AlphaLerp.cs" />
     <Compile Include="Assets\UI\EndUI.cs" />
-    <Compile Include="Assets\UI\InputController.cs" />
     <Compile Include="Assets\UI\Kill Pop Up\KillPopUp.cs" />
     <Compile Include="Assets\UI\UIManager.cs" />
     <Compile Include="Assets\Utility Scripts\LevelManager.cs" />
