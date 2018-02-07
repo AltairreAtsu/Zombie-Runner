@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireGun : MonoBehaviour {
-	[SerializeField][Tooltip ("The maximum distance a Raycast from the gun can travel.")]
-	private float maxDistance = 500f;
+    [SerializeField]
+    [Tooltip("The maximum distance a Raycast from the gun can travel.")]
+    private float maxDistance = 500f;
+
     [Space]
-    [SerializeField][Tooltip ("The Damage each fired shot does.")]
-	private int damage = 1;
-    [SerializeField][Tooltip ("Maximum number of shots before the player has to reload.")]
+
+    [SerializeField]
+    [Tooltip("The Damage each fired shot does.")]
+    private int damage = 1;
+    [SerializeField]
+    [Tooltip("Maximum number of shots before the player has to reload.")]
     private int maxAmmo = 20;
-    [SerializeField][Tooltip ("The time it takes to complete a reload")]
+    [SerializeField]
+    [Tooltip("The time it takes to complete a reload")]
     private float reloadTime = 1f;
+
     [Space]
-    [SerializeField][Tooltip("Sound to be played when the player fires the gun.")]
+
+    [SerializeField]
+    [Tooltip("Sound to be played when the player fires the gun.")]
     private AudioClip fireGunSund = null;
-    [SerializeField][Tooltip ("Sound to be played when the player reloads the gun.")]
+    [SerializeField]
+    [Tooltip("Sound to be played when the player reloads the gun.")]
     private AudioClip reloadSound = null;
 
     private int ammo = 20;
@@ -28,37 +38,48 @@ public class FireGun : MonoBehaviour {
         gunAnimator = GetComponent<Animator>();
     }
 
-    private void Fire (){
+    private void Update()
+    {
+        if (Input.GetAxis("Reload") > 0.5f
+            && !gunAnimator.GetBool("Reloading")
+            && ammo != maxAmmo)
+                StartReload();
+    }
+
+    private void Fire() {
         if (gunAnimator.GetBool("Reloading"))
             return;
 
         ammo--;
 
-        if (ammo <= 0)
-        {
-            audioSource.clip = reloadSound;
-            audioSource.Play();
-            gunAnimator.SetBool("Reloading", true);
-            Invoke("Reload", reloadTime);
-            return;
-        }
-
-        if(audioSource.clip != fireGunSund)
+        if (audioSource.clip != fireGunSund)
             audioSource.clip = fireGunSund;
 
         audioSource.Play();
 
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-		RaycastHit rayHit;
+        RaycastHit rayHit;
 
-		if (Physics.Raycast(ray, out rayHit, maxDistance)){
-			ZombieLogic logic = rayHit.collider.gameObject.GetComponent <ZombieLogic>();
+        if (Physics.Raycast(ray, out rayHit, maxDistance)) {
+            ZombieLogic logic = rayHit.collider.gameObject.GetComponent<ZombieLogic>();
 
-			if(logic != null){
-				logic.Hit (damage);
-			}
-		}
-	}
+            if (logic != null) {
+                logic.Hit(damage);
+            }
+        }
+
+        if (ammo <= 0)
+           StartReload();
+    }
+
+    private void StartReload()
+    {
+        audioSource.clip = reloadSound;
+        audioSource.Play();
+        gunAnimator.SetBool("Reloading", true);
+        Invoke("Reload", gunAnimator.GetCurrentAnimatorStateInfo(0).length);
+    }
+
 
     private void Reload()
     {
