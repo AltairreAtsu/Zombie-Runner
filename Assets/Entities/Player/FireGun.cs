@@ -15,9 +15,6 @@ public class FireGun : MonoBehaviour {
     [SerializeField]
     [Tooltip("Maximum number of shots before the player has to reload.")]
     private int maxAmmo = 20;
-    [SerializeField]
-    [Tooltip("The time it takes to complete a reload")]
-    private float reloadTime = 1f;
 
     [Space]
 
@@ -77,7 +74,7 @@ public class FireGun : MonoBehaviour {
         audioSource.clip = reloadSound;
         audioSource.Play();
         gunAnimator.SetBool("Reloading", true);
-        Invoke("Reload", gunAnimator.GetCurrentAnimatorStateInfo(0).length);
+        //Invoke("Reload", gunAnimator.GetCurrentAnimatorStateInfo(0).length);
     }
 
 
