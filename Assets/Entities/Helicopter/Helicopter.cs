@@ -24,6 +24,7 @@ public class Helicopter : MonoBehaviour
     [Tooltip ("How far off the ground the Helicopter should be when landed.")]
 	private float offset = 1f;
 
+    private AudioSource audioSource = null;
 	private LandingZone landingZone;
     private ParticleSystem landingParticles = null;
     private GameObject helicopterMesh;
@@ -43,6 +44,8 @@ public class Helicopter : MonoBehaviour
             }
         }
         landingParticles = GetComponentInChildren<ParticleSystem>();
+        audioSource = GetComponentInChildren<AudioSource>();
+        audioSource.volume = PlayerPrefsManager.GetSFXVolume();
 
 		passedTime = 0f;
 		arrivalTime = arrivalTime * 60;

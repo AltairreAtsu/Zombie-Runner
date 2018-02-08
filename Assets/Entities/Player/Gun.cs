@@ -33,6 +33,7 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefsManager.GetSFXVolume();
         gunAnimator = GetComponent<Animator>();
     }
 

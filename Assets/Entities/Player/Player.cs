@@ -57,7 +57,8 @@ public class Player : MonoBehaviour
 
         foreach (AudioSource source in GetComponents<AudioSource>())
         {
-            if(source.priority == audioSourcePriority)
+            source.volume = PlayerPrefsManager.GetSFXVolume();
+            if (source.priority == audioSourcePriority)
             {
                 audioSource = source;
             }

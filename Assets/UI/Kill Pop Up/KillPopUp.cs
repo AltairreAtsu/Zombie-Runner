@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class KillPopUp : MonoBehaviour {
@@ -11,10 +9,13 @@ public class KillPopUp : MonoBehaviour {
 	private float fadeTime = 1f;
 
 	private TextMeshProUGUI text;
-	private float currentTime = 0f;
+    private AudioSource audioSource;
+    private float currentTime = 0f;
 
 	void Start () {
 		text = GetComponent<TextMeshProUGUI>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefsManager.GetSFXVolume();
 	}
 
 	void Update () {

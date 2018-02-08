@@ -365,11 +365,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\UI\EndUI.cs" />
     <Compile Include="Assets\UI\Kill Pop Up\KillPopUp.cs" />
+    <Compile Include="Assets\UI\Options.cs" />
     <Compile Include="Assets\UI\UIManager.cs" />
     <Compile Include="Assets\Utility Scripts\AlphaLerp.cs" />
     <Compile Include="Assets\Utility Scripts\LevelManager.cs" />
     <Compile Include="Assets\Utility Scripts\LevelSetup.cs" />
     <Compile Include="Assets\Utility Scripts\MusicPlayer.cs" />
+    <Compile Include="Assets\Utility Scripts\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Utility Scripts\RadioSystem.cs" />
     <Compile Include="Assets\Utility Scripts\SpawnPointGizmo.cs" />
     <Compile Include="Assets\World Space\DayNightCycle.cs" />

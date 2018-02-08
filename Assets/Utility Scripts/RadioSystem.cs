@@ -28,6 +28,7 @@ public class RadioSystem : MonoBehaviour {
 	void Start ()
     {
 		audioSource = GetComponent<AudioSource> ();
+        audioSource.volume = PlayerPrefsManager.GetDialougeVolume();
 		levelManager = GetComponent<LevelManager> ();
 	}
 

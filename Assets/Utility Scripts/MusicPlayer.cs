@@ -23,6 +23,7 @@ public class MusicPlayer : MonoBehaviour
 
         audioSource.clip = music[SceneManager.GetActiveScene().buildIndex];
 		audioSource.loop = true;
+        SetVolumeFromPrefs();
         audioSource.Play();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,16 +43,28 @@ public class MusicPlayer : MonoBehaviour
         {
 			audioSource.Stop();
 			audioSource.clip = music[buildIndex];
+            SetVolumeFromPrefs();
             audioSource.Play();
 		}
 	}
 
-	public void StopAndPlay(AudioClip clip)
+    public void SetVolumeFromPrefs()
+    {
+        if(audioSource != null)
+         audioSource.volume = PlayerPrefsManager.GetMusicVolume();
+    }
+
+    public void SetVolume(float newVolume)
+    {
+        audioSource.volume = newVolume;
+    }
+
+    public void StopAndPlay(AudioClip clip)
     {
 		audioSource.Stop();
-		audioSource.loop = false;
 		audioSource.clip = clip;
-		audioSource.Play();
+        SetVolumeFromPrefs();
+        audioSource.Play();
 	}
 
 }

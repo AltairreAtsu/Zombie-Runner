@@ -51,6 +51,7 @@ public class ZombieLogic : MonoBehaviour
     {
 		Player = GameObject.FindObjectOfType<Player> ();
 		audioSource = GetComponent<AudioSource> ();
+        audioSource.volume = PlayerPrefsManager.GetSFXVolume();
 
 		gameObject.GetComponent<AICharacterControl> ().target = Player.transform;
 	}
