@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb7c0e8082f9024183b8df62868ab09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatHappened: {fileID: 8300000, guid: 8df4286d2a27b7448b02df36aef2f7d7, type: 3}
+  intro: {fileID: 8300000, guid: 8df4286d2a27b7448b02df36aef2f7d7, type: 3}
   goodLandingArea: {fileID: 8300000, guid: 22c3014044361594491edc25a131c3de, type: 3}
 --- !u!114 &114319816358967582
 MonoBehaviour:
@@ -798,7 +798,6 @@ MonoBehaviour:
   maxDistance: 500
   damage: 1
   maxAmmo: 20
-  reloadTime: 1
   fireGunSund: {fileID: 8300000, guid: d4edee389c7769247b88a408c2cab12c, type: 3}
   reloadSound: {fileID: 8300000, guid: d524ed99d1c17aa46b225076e4666110, type: 3}
 --- !u!114 &114568646497637544
@@ -915,7 +914,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomLevel: 30
-  gunAnimator: {fileID: 95989758554738006}
 --- !u!114 &114869603922081188
 MonoBehaviour:
   m_ObjectHideFlags: 1

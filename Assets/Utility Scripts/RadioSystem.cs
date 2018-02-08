@@ -1,35 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RadioSystem : MonoBehaviour {
-	[SerializeField][Tooltip ("Clip to be played when the player calls the Helicopter")]
+	[SerializeField]
+    [Tooltip ("Clip to be played when the player calls the Helicopter")]
 	private AudioClip initialCall = null;
-	[SerializeField][Tooltip ("Clip to be played when the Helicopter responds to the call.")]
+
+	[SerializeField]
+    [Tooltip ("Clip to be played when the Helicopter responds to the call.")]
 	private AudioClip callReply = null;
-	[SerializeField][Tooltip ("Clip to be played when the Helicopter Spawns.")]
+
+	[SerializeField]
+    [Tooltip ("Clip to be played when the Helicopter Spawns.")]
 	private AudioClip seeFlare = null;
-	[SerializeField][Tooltip ("Clip to be played when the Helicopter Arives at the LZ.")]
+
+	[SerializeField]
+    [Tooltip ("Clip to be played when the Helicopter Arives at the LZ.")]
 	private AudioClip arrivedAtLZ = null;
-	[SerializeField][Tooltip ("Clip to be played when the player wins.")]
+
+	[SerializeField]
+    [Tooltip ("Clip to be played when the player wins.")]
 	private AudioClip victoryClip = null;
 
 	private AudioSource audioSource = null;
 	private LandingZone landingZone = null;
 	private LevelManager levelManager = null;
 
-	void Start () {
+	void Start ()
+    {
 		audioSource = GetComponent<AudioSource> ();
 		levelManager = GetComponent<LevelManager> ();
 	}
 
-	void OnMakeInitialHeliCall () {
+	void OnMakeInitialHeliCall ()
+    {
 		audioSource.clip = initialCall;
 		audioSource.Play ();
 		Invoke ("OnCallReply", initialCall.length + 1f);
 	}
 
-	void OnCallReply () {
+	void OnCallReply ()
+    {
 		audioSource.clip = callReply;
 		audioSource.Play ();
 		BroadcastMessage ("OnDispatchHelicopter");
@@ -37,23 +47,27 @@ public class RadioSystem : MonoBehaviour {
 		landingZone.OnVictoryObservers += OnVictory;
 	}
 
-	void OnHelicopterLanded (){
+	void OnHelicopterLanded ()
+    {
 		audioSource.clip = arrivedAtLZ;
 		audioSource.Play ();
 	}
 
-	void OnHelicopterSpawned (){
+	void OnHelicopterSpawned ()
+    {
 		audioSource.clip = seeFlare;
 		audioSource.Play ();
 	}
 
-	void OnVictory (){
+	void OnVictory ()
+    {
 		audioSource.clip = victoryClip;
 		audioSource.Play ();
 		Invoke ("FinishLevel", victoryClip.length);
 	}
 
-	void FinishLevel(){
+	void FinishLevel()
+    {
 		levelManager.LoadLevel (2);
 	}
 }

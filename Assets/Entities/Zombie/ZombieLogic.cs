@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
-public class ZombieLogic : MonoBehaviour {
-	[SerializeField]
+public class ZombieLogic : MonoBehaviour
+{
+    #region Variables
+    [SerializeField]
     [Tooltip ("Range from which Zombies can hit the player.")]
 	private float attackDistance = 2.5f;
 
@@ -29,8 +29,8 @@ public class ZombieLogic : MonoBehaviour {
     [Space]
 
     [SerializeField]
-    [Tooltip ("Store the refrence to the Hip bone here.")]
-    private Transform hipTransform = null;
+    [Tooltip ("Store the refrence to the kill pop up spawn transform here.")]
+    private Transform killPopUpSpawnTransform = null;
 
     [Space]
 
@@ -45,8 +45,10 @@ public class ZombieLogic : MonoBehaviour {
 
 	public delegate void OnZombieKilled(Transform zombiePostion);
 	public static OnZombieKilled OnZombieKilledObservers = null;
+#endregion
 
-	private void Start () {
+    private void Start ()
+    {
 		Player = GameObject.FindObjectOfType<Player> ();
 		audioSource = GetComponent<AudioSource> ();
 
@@ -56,25 +58,38 @@ public class ZombieLogic : MonoBehaviour {
 	private void Update ()
     {
 		timeSinceHit += Time.deltaTime;
-		if(DistanceToPlayer() <= attackDistance && !attacking)
+        bool canAttackPlayer = DistanceToPlayer() <= attackDistance && !attacking;
+
+        if (canAttackPlayer)
         {
-            // TODO Play Attack Animation
-            attacking = true;
-            audioSource.clip = attackSounds[Random.Range(0, attackSounds.Length)];
-            audioSource.Play();
-
-            float delay = attackDelay;
-
-            if(audioSource.clip.length > attackDelay)
-            {
-                delay = attackDelay + (audioSource.clip.length - attackDelay);
-            }
-
-            Invoke("Attack", delay);
+            PlayAttackTell();
+            StartAttack();
 		}
 	}
 
-    private void Attack()
+    private void PlayAttackTell()
+    {
+        // TODO Play Attack Animation
+        attacking = true;
+        audioSource.clip = attackSounds[Random.Range(0, attackSounds.Length)];
+        audioSource.Play();
+
+
+    }
+
+    private void StartAttack()
+    {
+        float delay = attackDelay;
+
+        if (audioSource.clip.length > attackDelay)
+        {
+            delay = attackDelay + (audioSource.clip.length - attackDelay);
+        }
+
+        Invoke("DoAttack", delay);
+    }
+
+    private void DoAttack()
     {
         attacking = false;
         if (DistanceToPlayer() <= attackDistance)
@@ -90,7 +105,7 @@ public class ZombieLogic : MonoBehaviour {
 
 			if (health <= 0) {
 				// TODO Play Death Animation
-				OnZombieKilledObservers(hipTransform);
+				OnZombieKilledObservers(killPopUpSpawnTransform);
 				Object.Destroy (gameObject);
 			}
 		}

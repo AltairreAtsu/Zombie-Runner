@@ -1,38 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Eyes : MonoBehaviour {
-
-	[SerializeField][Tooltip ("The Amount of FOV to remove from the camera to create a zoom effect.")]
-	private float zoomLevel = 10;
-	private Camera eyeCamera;
-	private float baseFOV;
+public class Eyes : MonoBehaviour
+{
 
 	[SerializeField]
-	private Animator gunAnimator = null;
+    [Tooltip ("The Amount of FOV to remove from the camera to create a zoom effect.")]
+	private float zoomLevel = 10;
 
-	// Use this for initialization
-	void Start () {
-		eyeCamera = Camera.main;
+    private Animator gunAnimator = null;
+    private Camera eyeCamera;
+
+	private float baseFOV;
+
+
+
+	void Start ()
+    {
+        Transform player = GameObject.FindWithTag("Player").transform;
+        gunAnimator = player.GetComponentInChildren<Animator>();
+
+        eyeCamera = Camera.main;
 		baseFOV = eyeCamera.fieldOfView;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetAxis("Fire2") > 0.5f && !gunAnimator.GetBool("Reloading")){
+	void Update ()
+    {
+		if(Input.GetAxis("Fire2") > 0.5f && !gunAnimator.GetBool("Reloading"))
+        {
 			eyeCamera.fieldOfView = baseFOV - zoomLevel;
 
-			if ( !gunAnimator.GetBool("Zoomed") ){
+			if ( !gunAnimator.GetBool("Zoomed") )
 				gunAnimator.SetBool ("Zoomed", true);
-			}
 				
-		} else {
+		} else
+        {
 			eyeCamera.fieldOfView = baseFOV;
 
-			if ( gunAnimator.GetBool("Zoomed") ){
+			if ( gunAnimator.GetBool("Zoomed") )
 				gunAnimator.SetBool ("Zoomed", false);
-			}
 		}
 	}
 }

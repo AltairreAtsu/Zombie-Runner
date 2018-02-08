@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Player : MonoBehaviour {
-	[SerializeField][Tooltip ("The Gun Gameobject with animator component.")]
-	private Animator gunObjectAnimator = null;
-
-	[SerializeField][Tooltip ("The Total amount of times the player can be hit before they die.")]
+public class Player : MonoBehaviour
+{
+    #region Variables
+    [SerializeField]
+    [Tooltip ("The Total amount of times the player can be hit before they die.")]
 	private float healthMax = 3;
 
     [SerializeField]
@@ -30,7 +28,7 @@ public class Player : MonoBehaviour {
     [Space]
 
     [SerializeField]
-    [Tooltip ("The AudioSource Priority for the player hurt and die sounds.")]
+    [Tooltip ("The priority on the Audiosource to be used for the player hurt and die sounds.")]
     private int audioSourcePriority = 126;
 
     [SerializeField]
@@ -45,13 +43,17 @@ public class Player : MonoBehaviour {
 	private float timeSinceHit = 0f;
 
     private AudioSource audioSource = null;
+    private Animator gunAnimator = null;
     private GameObject[] spawnPoints = null;
 
     public delegate void OnPlayerHit();
 	public OnPlayerHit playerHitObservers;
+#endregion 
 
-	void Start () {
+    void Start ()
+    {
 		spawnPoints = GameObject.FindGameObjectsWithTag ("Spawn Point");
+        gunAnimator = transform.GetComponentInChildren<Animator>();
 
         foreach (AudioSource source in GetComponents<AudioSource>())
         {
@@ -62,26 +64,27 @@ public class Player : MonoBehaviour {
         }
 
         healthCurrent = healthMax;
+        Respawn();
 	}
 
-	void Update(){
+	void Update()
+    {
 		timeSinceHit += Time.deltaTime;
 
-		if(Input.GetAxis("Fire1") > 0.5f){
-			gunObjectAnimator.SetBool ("Firing", true);
-		} else {
-			gunObjectAnimator.SetBool ("Firing", false);
-		}
+		if(Input.GetAxis("Fire1") > 0.5f)
+			gunAnimator.SetBool ("Firing", true);
+        else
+			gunAnimator.SetBool ("Firing", false);
 	}
 
-
-	private void OnFindClearArea(){
-		// Drop A flare
+	private void OnFindClearArea()
+    {
 		Invoke("DropFlare", 3f);
 
 	}
 
-	private void DropFlare(){
+	private void DropFlare()
+    {
 		Ray ray = new Ray (transform.position, Vector3.down);
 		RaycastHit rayHit;
 		int layerMask = 1 << layerNumber;
@@ -91,30 +94,41 @@ public class Player : MonoBehaviour {
 		Instantiate (landingZonePrefab, offsetPosition, transform.rotation);
 	}
 
-	public void Hit(float damage){
-		if (timeSinceHit >= invicabilityTime) {
+	public void Hit(float damage)
+    {
+		if (timeSinceHit >= invicabilityTime)
+        {
 			healthCurrent -= damage;
 			timeSinceHit = 0f;
 			playerHitObservers ();
 
-			if (healthCurrent <= 0) {
-                audioSource.clip = dieSounds[Random.Range(0, dieSounds.Length)];
-                audioSource.Play();
-                Respawn ();
+            if (DoDeathCheck())
                 return;
-			}
 
             audioSource.clip = hurtSounds[Random.Range(0, hurtSounds.Length)];
             audioSource.Play();
         }
 	}
 
-	public void KillPlayer(){
+    private bool DoDeathCheck()
+    {
+        if (healthCurrent <= 0)
+        {
+            audioSource.clip = dieSounds[Random.Range(0, dieSounds.Length)];
+            audioSource.Play();
+            Respawn();
+            return true;
+        }
+        return false;
+    }
+
+	public void KillPlayer()
+    {
 		Hit (healthMax);
 	}
 
-	private void Respawn(){
-		// Select Random Spawn point and Move to location
+	private void Respawn()
+    {
 		GameObject spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
 		transform.position = spawnPoint.transform.position;

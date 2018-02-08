@@ -318,11 +318,11 @@
     <Compile Include="Assets\Entities\Helicopter\Helicopter.cs" />
     <Compile Include="Assets\Entities\Landing Zone\LandingZone.cs" />
     <Compile Include="Assets\Entities\Player\Eyes.cs" />
-    <Compile Include="Assets\Entities\Player\FireGun.cs" />
     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Entities\Player\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
+    <Compile Include="Assets\Entities\Player\Gun.cs" />
     <Compile Include="Assets\Entities\Player\HeloCollider.cs" />
     <Compile Include="Assets\Entities\Player\InnerVoice.cs" />
     <Compile Include="Assets\Entities\Player\Player.cs" />
@@ -331,7 +331,6 @@
     <Compile Include="Assets\Entities\Zombie\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
     <Compile Include="Assets\Entities\Zombie\ZombieLogic.cs" />
     <Compile Include="Assets\Entities\Zombie\ZombieSpawner.cs" />
-    <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -364,12 +363,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\UI\AlphaLerp.cs" />
     <Compile Include="Assets\UI\EndUI.cs" />
     <Compile Include="Assets\UI\Kill Pop Up\KillPopUp.cs" />
     <Compile Include="Assets\UI\UIManager.cs" />
+    <Compile Include="Assets\Utility Scripts\AlphaLerp.cs" />
     <Compile Include="Assets\Utility Scripts\LevelManager.cs" />
-    <Compile Include="Assets\Utility Scripts\PlayerPrefsManager.cs" />
+    <Compile Include="Assets\Utility Scripts\LevelSetup.cs" />
+    <Compile Include="Assets\Utility Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Utility Scripts\RadioSystem.cs" />
     <Compile Include="Assets\Utility Scripts\SpawnPointGizmo.cs" />
     <Compile Include="Assets\World Space\DayNightCycle.cs" />
@@ -391,7 +391,6 @@
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />

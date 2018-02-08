@@ -1,27 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour {
-	[SerializeField][Tooltip ("Prefab to use when spawning zombies.")]
+    #region Variables
+    [SerializeField]
+    [Tooltip ("Prefab to use when spawning zombies.")]
 	private GameObject zombiePrefab = null;
-	[SerializeField][Tooltip ("Hard cap of zombies that can be spawned at once.")]
+
+    [Space]
+
+	[SerializeField]
+    [Tooltip ("Hard cap of zombies that can exist at once.")]
 	private int zombieHardCap = 15;
-	[SerializeField][Tooltip ("Hard Cap of Time that can pass without spawn.")]
+
+    [Space]
+
+    [SerializeField]
+    [Tooltip ("Hard Cap of Time that can pass without spawn.")]
 	private float timeBetweenSpawnsMax = 15f;
-	[SerializeField][Tooltip ("Soft Cap of minimum time before a zombie can spawn.")]
+
+	[SerializeField]
+    [Tooltip ("Soft Cap of minimum time before a zombie can spawn.")]
 	private float timeBetweenSpawnsMin = 5f;
-	[SerializeField][Range (0f, 1f)][Tooltip ("Base chance a zombie will spawn durring spawn tick.")]
+
+	[SerializeField]
+    [Range (0f, 1f)]
+    [Tooltip ("Base chance a zombie will spawn durring spawn tick.")]
 	private float spawnChance = 0.05f;
+
+    [Space]
+
 	[SerializeField][Tooltip ("How far a spawn point must be from the player to spawn a zombie.")]
 	private float spawnDistance = 20f;
 
-	private GameObject zombieParent;
-	private Player player;
 	private float timeSinceLastSpawn;
 	private int zombieCount;
 
-	private void Start() {
+    private GameObject zombieParent;
+    private Player player;
+    #endregion
+
+    private void Start()
+    {
 		zombieParent = GameObject.Find ("Zombies");
 		player = GameObject.FindObjectOfType<Player> ();
 
@@ -32,27 +51,27 @@ public class ZombieSpawner : MonoBehaviour {
 		ZombieLogic.OnZombieKilledObservers += OnZombieKilled;
 	}
 
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		timeSinceLastSpawn += Time.deltaTime;
 
-		if(CanSpawnZombie()){
+		if(CanSpawnZombie())
 			SpawnZombie ();
-		}
 	}
 
-	private bool CanSpawnZombie(){
+	private bool CanSpawnZombie()
+    {
 		if (timeSinceLastSpawn > timeBetweenSpawnsMin)
 		if (Random.value <= spawnChance || timeSinceLastSpawn > timeBetweenSpawnsMax) {
-			if (zombieCount < zombieHardCap) {
+			if (zombieCount < zombieHardCap)
 				return true;
-			}
 		}
 
 		return false;
 	}
 
-	public void SpawnZombie(){
+	public void SpawnZombie()
+    {
 		Transform spawnPos = RandomSpawnPoint ();
 
 		GameObject zombie = Object.Instantiate (zombiePrefab, spawnPos) as GameObject;
@@ -61,7 +80,8 @@ public class ZombieSpawner : MonoBehaviour {
 		timeSinceLastSpawn = 0f;
 	}
 
-	private Transform RandomSpawnPoint(){
+	private Transform RandomSpawnPoint()
+    {
 		float differentialFloat = 0f;
 		Transform spawnPos = null;
 
@@ -74,7 +94,8 @@ public class ZombieSpawner : MonoBehaviour {
 		return spawnPos;
 	}
 
-	private void OnZombieKilled(Transform zombiePosition){
+	private void OnZombieKilled(Transform zombiePosition)
+    {
 		zombieCount--;
 	}
 }
