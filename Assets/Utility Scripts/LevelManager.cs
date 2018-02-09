@@ -5,8 +5,8 @@ public class LevelManager : MonoBehaviour {
 
 	public void LoadLevel(int index)
     {
-		SceneManager.LoadScene(index);
-	}
+        SceneManager.LoadScene(index);
+    }
 
 	public void Quit()
     {

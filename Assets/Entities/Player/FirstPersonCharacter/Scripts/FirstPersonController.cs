@@ -62,6 +62,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            if (Pause.gameIsPaused)
+            {
+                m_MouseLook.SetCursorLock(false);
+                return;
+            }
+
+            m_MouseLook.SetCursorLock(true);
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -95,6 +102,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+            if (Pause.gameIsPaused)
+                return;
+
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -255,6 +265,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        private void OnDestroy()
+        {
+            m_MouseLook.SetCursorLock(false);
         }
     }
 }
